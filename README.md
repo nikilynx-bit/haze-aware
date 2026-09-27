@@ -1,50 +1,38 @@
-# Singapore Haze Research Hub
+# 🌫️ Singapore Haze Research Hub
 
-A curated knowledge base and research reference for understanding transboundary and local haze pollution in Singapore.
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![Markdown Lint](https://github.com/<your-username>/sg-haze-research/actions/workflows/markdown-lint.yml/badge.svg)](https://github.com/<your-username>/sg-haze-research/actions/workflows/markdown-lint.yml)
+[![DOI](https://zenodo.org/badge/XXXXXX.svg)](https://zenodo.org/badge/latestdoi/XXXXXX)
 
-## Purpose
+> A comprehensive, reproducible, and open-source knowledge base and computational toolkit for studying transboundary and local haze pollution in Singapore.
 
-This repository consolidates background knowledge, data sources, methodological guidance, and literature relevant to studying haze episodes in Singapore. It is intended for:
+![Haze Banner](docs/assets/haze-banner.jpg) <!-- Add a striking satellite image of smoke over SG -->
 
-- Graduate students and early-career researchers entering the field
-- Public health and environmental science teams scoping new studies
-- Policy analysts reviewing the evidence base
-- Data scientists working with Singapore air-quality datasets
+## 🌟 Why this repository?
 
-## Repository Layout
+Most haze resources are either purely academic papers (hard to reproduce) or raw data portals (hard to contextualize). This repo bridges the gap by combining **deep domain knowledge** with **production-ready GIS and data science pipelines**.
 
-| Path | Contents |
-|------|----------|
-| `docs/01-background.md` | Physical and geopolitical context of haze in Singapore |
-| `docs/02-data-sources.md` | Open and restricted datasets, APIs, and access procedures |
-| `docs/03-research-methods.md` | Analytical frameworks and study designs used in the literature |
-| `docs/04-policy-framework.md` | National, bilateral, and ASEAN governance instruments |
-| `docs/05-health-impacts.md` | Epidemiological evidence and exposure-response relationships |
-| `docs/06-seasonal-patterns.md` | Monsoon cycles, El Niño coupling, and fire-seasonality |
-| `docs/07-key-literature.md` | Annotated reading list (peer-reviewed + grey literature) |
-| `docs/08-glossary.md` | Definitions of technical terms, indices, and acronyms |
-| `templates/` | Reusable templates for dataset reviews and literature notes |
+### 🏗️ Architecture & Data Flow
 
-## Scope Notes
-
-- **Geographic focus:** Singapore and its immediate haze source regions (Sumatra, Kalimantan, Peninsular Malaysia).
-- **Temporal focus:** Primarily 1990–present, with emphasis on major episodes (1997, 2013, 2015, 2019, 2023).
-- **Disciplines covered:** Atmospheric science, public health, remote sensing, environmental policy, economics.
-
-## Getting Started
-
-1. Read [`docs/01-background.md`](docs/01-background.md) for domain context.
-2. Identify your data needs in [`docs/02-data-sources.md`](docs/02-data-sources.md).
-3. Select an analytical approach via [`docs/03-research-methods.md`](docs/03-research-methods.md).
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md). Additions to the literature list, new data-source entries, and methodological case studies are especially welcome.
-
-## Licence
-
-Text content: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-Code snippets (if any): MIT.
+```mermaid
+graph TD
+    A[Top-Tier Earth Obs] -->|NASA Earthdata| B(VIIRS/MODIS Fires)
+    A -->|Copernicus CDS| C(Sentinel-5P TROPOMI)
+    A -->|AWS Open Data| D(Himawari-8 AHI)
+    E[Local Gov APIs] -->|data.gov.sg| F(NEA PM2.5 / PSI)
+    E -->|MSS| G(Meteorological Data)
+    
+    B --> H((Python / GIS Engine))
+    C --> H
+    D --> H
+    F --> H
+    G --> H
+    
+    H -->|Spatiotemporal Fusion| I[Exposure Surfaces]
+    I --> J[Epidemiological Analysis]
+    I --> K[Source Attribution]
+    I --> L[Policy Evaluation]
 
 ## Disclaimer
 
