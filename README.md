@@ -7,7 +7,7 @@
 
 > A comprehensive, reproducible, and open-source knowledge base and computational toolkit for studying transboundary and local haze pollution in Singapore.
 
-![Haze Banner](docs/assets/haze-banner.jpg) <!-- Add a striking satellite image of smoke over SG -->
+![Haze Banner](docs/assets/haze-banner.jpg)
 
 ## 🌟 Why this repository?
 
